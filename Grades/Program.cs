@@ -20,8 +20,7 @@ namespace Grades
 
             GradeBook book = new GradeBook();
 
-            book.NameChanged += new NameChangedDelegate(OnNameChanged);
-            book.NameChanged += new NameChangedDelegate(OnNameChanged2);
+            book.NameChanged += OnNameChanged;
 
             book.Name = "Paul's Grade Book";
             book.AddGrade(91);
@@ -35,14 +34,9 @@ namespace Grades
             WriteResult("Lowest Grade", stats.LowestGrade);
         }
 
-        static void OnNameChanged(string exisitingName, string newName)
+        static void OnNameChanged(object sender, NamedChangedEventArgs args)
         {
-            Console.WriteLine($"GradeBook changing {exisitingName} to {newName}");
-        }
-
-        static void OnNameChanged2(string exisitingName, string newName)
-        {
-            Console.WriteLine("***");
+            Console.WriteLine($"GradeBook changing {args.ExistingName} to {args.NewName}");
         }
 
         static void WriteResult(string description, int result)

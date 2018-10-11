@@ -47,6 +47,7 @@
     <Compile Include="GradeStatistics.cs" />
     <Compile Include="GradeBook.cs" />
     <Compile Include="NameChangedDelegate.cs" />
+    <Compile Include="NamedChangedEventArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
