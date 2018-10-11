@@ -17,9 +17,10 @@ namespace Grades
 
             g1.Name = "Paul's grade book";
             
-           
+           /*
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.Speak("Hello! This is the grade book program");
+            */
 
             GradeBook book = new GradeBook();
 
@@ -28,11 +29,19 @@ namespace Grades
             book.AddGrade(75);
 
             GradeStatistics stats = book.ComputeStatistics();
-            Console.WriteLine("The average grade is: " + stats.AverageGrade);
-            Console.WriteLine("The lowest grade is: " + stats.HighestGrade);
-            Console.WriteLine("The highest grade is: " + stats.HighestGrade);
-           
+            WriteResult("Average", stats.AverageGrade);
+            WriteResult("Highest Grade", (int)stats.HighestGrade);
+            WriteResult("Lowest Grade", stats.LowestGrade);
+        }
 
+        static void WriteResult(string description, int result)
+        {
+            Console.WriteLine(description + ": " + result);
+        }
+
+        static void WriteResult(string description, float result)
+        {
+            Console.WriteLine($"{description}: {result}", description, result);
         }
     }
 }

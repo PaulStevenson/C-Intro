@@ -5,3 +5,10 @@ C:\Users\PaulS2\source\Grades\Grades\obj\Debug\Grades.csprojAssemblyReference.ca
 C:\Users\PaulS2\source\Grades\Grades\obj\Debug\Grades.csproj.CoreCompileInputs.cache
 C:\Users\PaulS2\source\Grades\Grades\obj\Debug\Grades.exe
 C:\Users\PaulS2\source\Grades\Grades\obj\Debug\Grades.pdb
+C:\Users\PaulS2\Documents\MyProjects\Grades\Grades\obj\Debug\Grades.csprojAssemblyReference.cache
+C:\Users\PaulS2\Documents\MyProjects\Grades\Grades\obj\Debug\Grades.csproj.CoreCompileInputs.cache
+C:\Users\PaulS2\Documents\MyProjects\Grades\Grades\obj\Debug\Grades.exe
+C:\Users\PaulS2\Documents\MyProjects\Grades\Grades\obj\Debug\Grades.pdb
+C:\Users\PaulS2\Documents\MyProjects\Grades\Grades\bin\Debug\Grades.exe.config
+C:\Users\PaulS2\Documents\MyProjects\Grades\Grades\bin\Debug\Grades.exe
+C:\Users\PaulS2\Documents\MyProjects\Grades\Grades\bin\Debug\Grades.pdb
