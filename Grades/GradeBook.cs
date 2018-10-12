@@ -23,6 +23,8 @@ namespace Grades
 
         public GradeStatistics ComputeStatistics()
         {
+            Console.WriteLine("GradeBook::ComputeStatistics");
+
             GradeStatistics stats = new GradeStatistics();
 
             float sum = 0;
@@ -77,6 +79,6 @@ namespace Grades
 
         private string _name;
 
-        private List<float> grades;
+        protected List<float> grades;
     }
 }

@@ -12,22 +12,15 @@ namespace Grades
     {
         static void Main(string[] args)
         {
-            /*
-            GradeBook g1 = new GradeBook();
-            GradeBook g2 = g1;
-            g1.Name = "Paul's grade book";
-          */
 
             GradeBook book = new GradeBook();
             GetBookName(book);
-
             AddingGrades(book);
-
             SavingGrades(book);
-            WritingGrades(book);
+            WritingResults(book);
         }
 
-        private static void WritingGrades(GradeBook book)
+        private static void WritingResults(GradeBook book)
         {
             GradeStatistics stats = book.ComputeStatistics();
             WriteResult("Average", stats.AverageGrade);
