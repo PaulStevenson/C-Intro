@@ -67,7 +67,7 @@ namespace Grades.Test
             book.AddGrade(75);
 
             GradeStatistics result = book.ComputeStatistics();
-            Assert.AreEqual("Fail", result.Description);
+            Assert.AreEqual("Good", result.Description);
         }
 
 
