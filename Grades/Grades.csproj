@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClasGradeTracker.cs" />
     <Compile Include="GradeStatistics.cs" />
     <Compile Include="GradeBook.cs" />
     <Compile Include="NameChangedDelegate.cs" />
