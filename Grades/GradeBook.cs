@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,15 @@ namespace Grades
             return stats;
         }
 
+        public void WriteGrades(TextWriter destination)
+        {
+            for (int i = grades.Count; i > 0; i--)
+            {
+                destination.WriteLine(grades[i - 1]);
+            }
+        }
+
+
         public string Name
         {
             get
@@ -49,13 +59,13 @@ namespace Grades
                     throw new ArgumentException("Not allowed to be null nor empty");
                 }
 
-                if (_name != value)
+                if (_name != value && NameChanged != null)
                 {
                     NamedChangedEventArgs args = new NamedChangedEventArgs();
                     args.ExistingName = _name;
                     args.NewName = value;
 
-                    //NameChanged(this, args);
+                    NameChanged(this, args);
                 }
 
                 _name = value;

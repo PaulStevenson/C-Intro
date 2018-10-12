@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Speech.Synthesis;
 using System.Text;
@@ -18,27 +19,49 @@ namespace Grades
           */
 
             GradeBook book = new GradeBook();
+            GetBookName(book);
 
+            AddingGrades(book);
 
-            try
-            {
-                Console.WriteLine("Enter a name");
-                book.Name = Console.ReadLine();
-            }
-            catch(ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            SavingGrades(book);
+            WritingGrades(book);
+        }
 
-            book.AddGrade(91);
-            book.AddGrade(89.5f);
-            book.AddGrade(75);
-
+        private static void WritingGrades(GradeBook book)
+        {
             GradeStatistics stats = book.ComputeStatistics();
             WriteResult("Average", stats.AverageGrade);
             WriteResult("Highest Grade", stats.HighestGrade);
             WriteResult("Lowest Grade", stats.LowestGrade);
             WriteResult("Grade", stats.LetterGrade);
+        }
+
+        private static void SavingGrades(GradeBook book)
+        {
+            using (StreamWriter outputFile = File.CreateText("grades.txt"))
+            {
+                book.WriteGrades(outputFile);
+            }
+        }
+
+        private static void AddingGrades(GradeBook book)
+        {
+            book.AddGrade(91);
+            book.AddGrade(89.5f);
+            book.AddGrade(75);
+        }
+
+        private static void GetBookName(GradeBook book)
+        {
+            try
+            {
+                Console.WriteLine("Enter a name");
+                book.Name = Console.ReadLine();
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         //static void OnNameChanged(object sender, NamedChangedEventArgs args)
