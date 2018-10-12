@@ -46,7 +46,7 @@ namespace Grades
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("Name cannot be null nor empty");
+                    throw new ArgumentException("Not allowed to be null nor empty");
                 }
 
                 if (_name != value)
@@ -55,7 +55,7 @@ namespace Grades
                     args.ExistingName = _name;
                     args.NewName = value;
 
-                    NameChanged(this, args);
+                    //NameChanged(this, args);
                 }
 
                 _name = value;
